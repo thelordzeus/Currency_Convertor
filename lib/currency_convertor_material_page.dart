@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -19,6 +21,12 @@ class CurrencyConvertorMaterialPage extends StatelessWidget {
     );
     return Scaffold(
       backgroundColor: Colors.blueGrey,
+      appBar: AppBar(
+        title: const Text('Currency Convertor',
+            style: TextStyle(color: Colors.white)),
+        centerTitle: true,
+        backgroundColor: Colors.blueGrey,
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -59,12 +67,12 @@ class CurrencyConvertorMaterialPage extends StatelessWidget {
                 onPressed: () {
                   print('Button Clicked');
                 },
-                style: const ButtonStyle(
-                  elevation: WidgetStatePropertyAll(10),
-                  backgroundColor: WidgetStatePropertyAll(Colors.black),
-                  foregroundColor: WidgetStatePropertyAll(Colors.white),
-                  minimumSize: WidgetStatePropertyAll(
-                    Size(double.infinity, 50),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.white,
+                  minimumSize: const Size(double.infinity, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
                   ),
                 ),
                 child: const Text('Convert'),
