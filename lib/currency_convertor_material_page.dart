@@ -36,7 +36,7 @@ class _CurrencyConvertorMaterialPageState
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              result.toString(),
+              'INR $result',
               style: const TextStyle(
                   fontSize: 55,
                   fontWeight: FontWeight.bold,
@@ -69,9 +69,8 @@ class _CurrencyConvertorMaterialPageState
               padding: const EdgeInsets.all(10),
               child: ElevatedButton(
                 onPressed: () {
-                  setState(() {
-                    result = double.parse(textEditingController.text) * 81;
-                  });
+                  result = double.parse(textEditingController.text) * 81;
+                  setState(() {});
                 },
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.black,
