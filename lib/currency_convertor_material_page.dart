@@ -1,14 +1,17 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 
-class CurrencyConvertorMaterialPage extends StatelessWidget {
+class CurrencyConvertorMaterialPage extends StatefulWidget {
   const CurrencyConvertorMaterialPage({super.key});
 
+  @override
+  State<CurrencyConvertorMaterialPage> createState() =>
+      _CurrencyConvertorMaterialPageState();
+}
+
+class _CurrencyConvertorMaterialPageState
+    extends State<CurrencyConvertorMaterialPage> {
+  double result = 0;
+  final TextEditingController textEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final border = OutlineInputBorder(
@@ -32,9 +35,9 @@ class CurrencyConvertorMaterialPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
-              '0',
-              style: TextStyle(
+            Text(
+              result.toString(),
+              style: const TextStyle(
                   fontSize: 55,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
@@ -42,6 +45,7 @@ class CurrencyConvertorMaterialPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10),
               child: TextField(
+                controller: textEditingController,
                 style: const TextStyle(color: Colors.black),
                 keyboardType:
                     const TextInputType.numberWithOptions(decimal: true),
@@ -65,7 +69,9 @@ class CurrencyConvertorMaterialPage extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               child: ElevatedButton(
                 onPressed: () {
-                  print('Button Clicked');
+                  setState(() {
+                    result = double.parse(textEditingController.text) * 81;
+                  });
                 },
                 style: TextButton.styleFrom(
                   backgroundColor: Colors.black,
