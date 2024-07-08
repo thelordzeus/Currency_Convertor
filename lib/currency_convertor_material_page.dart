@@ -12,6 +12,14 @@ class _CurrencyConvertorMaterialPageState
     extends State<CurrencyConvertorMaterialPage> {
   double result = 0;
   final TextEditingController textEditingController = TextEditingController();
+
+  //! Dispose the textEditingController to avoid memory leaks
+  @override
+  void dispose() {
+    textEditingController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final border = OutlineInputBorder(
