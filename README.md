@@ -1,16 +1,11 @@
 # currency_conventer
 
-A new Flutter project.
+simply convertos the currency from USD to INR
 
-## Getting Started
+## application Images 
+<img src="https://github.com/thelordzeus/Currency_Convertor/assets/87523233/4606e5b8-8654-4119-8613-096102135e44" alt="Mockup Pictures" width="258" height="559">
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
